@@ -1,15 +1,22 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-
-namespace Assets.C_file
+public class Title : MonoBehaviour
 {
-    class Title
+    // Start is called before the first frame update
+    void Start()
     {
+        GameObject.Find("Title");
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("Game");
+        }
     }
 }
