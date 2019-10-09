@@ -7,7 +7,6 @@ public class MoveFloor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     private int Back = 0;         //0 前進
@@ -22,6 +21,7 @@ public class MoveFloor : MonoBehaviour
     private int timer = 0;        //タイマー
     private int taikitimer = 0;   //待機タイマー
     private bool one = false;
+    
 
     // Update is called once per frame
     void Update()
