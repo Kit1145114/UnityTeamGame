@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float Move = 3.0f;
+    public float MoveDown = 20.0f;
+    public float gravity = -0.2f;
     private Vector3 Player_pos; //プレイヤー
     private float x;
     private float z;
@@ -27,8 +28,9 @@ public class Player : MonoBehaviour
         z = Input.GetAxis("Vertical");
 
         Vector3 moveSpeed = Vector3.zero;
-        moveSpeed.x = x;
-        moveSpeed.z = z;
+        moveSpeed.x = x / MoveDown;
+        moveSpeed.z = z / MoveDown;
+        moveSpeed.y = gravity;
 
         CCon.Move(moveSpeed);
     }
