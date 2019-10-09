@@ -9,17 +9,17 @@ public class Player : MonoBehaviour
     private Vector3 Player_pos; //プレイヤー
     private float x;
     private float z;
-
-
+    public static bool PlayerDeath;
 
     CharacterController CCon;
-
+    //Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         Player_pos = GetComponent<Transform>().position;
         CCon = gameObject.GetComponent<CharacterController>();
-
+        //rb = gameObject.GetComponent<Rigidbody>();
+        PlayerDeath = false;
     }
 
     // Update is called once per frame
@@ -35,6 +35,16 @@ public class Player : MonoBehaviour
         moveSpeed.y = gravity;
 
         CCon.Move(moveSpeed);
+        //rb.MovePosition(moveSpeed);
+
+        if(gameObject.transform.position.y <= -10.0f)
+        {
+            Retry.GameRetry = true;
+        }
+        if(PlayerDeath == true)
+        {
+            Retry.GameRetry = true;
+        }
     }
 }
 
