@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
     {
         Player_pos = GetComponent<Transform>().position;
         CCon = gameObject.GetComponent<CharacterController>();
-       
     }
 
     // Update is called once per frame
