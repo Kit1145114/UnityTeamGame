@@ -8,15 +8,20 @@ public class Title : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.Find("Title");
+        //GameObject.Find("Title");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown("joystick button 0"))
+        //{
+        //    //SceneManager.LoadScene("SampleScene");
+        //    Debug.Log("button0");
+        //}
+        if(Input.GetKeyDown("joystick button 0"))
         {
-            SceneManager.LoadScene("Result");
+            SceneManager.LoadScene("SampleScene");
         }
     }
 }

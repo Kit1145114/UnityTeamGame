@@ -129,6 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 821299770}
+  - component: {fileID: 821299769}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -136,6 +137,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &821299769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821299768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98aa0f9903ec21544908213e01e4df0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &821299770
 Transform:
   m_ObjectHideFlags: 0
