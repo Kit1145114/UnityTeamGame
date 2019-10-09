@@ -31,6 +31,10 @@ public class snake : MonoBehaviour
         if(dis <= distance)
         {
             gameObject.transform.position += move;
+            if (dis <= 2.0f && Player.PlayerDeath == false )
+            {
+                Player.PlayerDeath = true;
+            }
         }
         else
         {
