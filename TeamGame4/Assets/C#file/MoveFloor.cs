@@ -10,14 +10,17 @@ public class MoveFloor : MonoBehaviour
         
     }
 
-    private int Back = 0;       //0 前進
-                                //1 後退
-                                //2 待機
-    private int Com_Back = 0;   //0 前進
-                                //1 後退
-    private Vector3 FloorPos;   //動く床の座標
-    private int timer = 0;      //タイマー
-    private int taikitimer = 0;    //待機タイマー
+    private int Back = 0;         //0 前進
+                                  //1 後退
+                                  //2 待機
+
+    private int Com_Back = 0;     //0 前進
+                                  //1 後退
+
+    private Vector3 FloorPos;     //動く床の座標
+    private Vector3 PlayerPos;
+    private int timer = 0;        //タイマー
+    private int taikitimer = 0;   //待機タイマー
     private bool one = false;
 
     // Update is called once per frame
@@ -43,6 +46,7 @@ public class MoveFloor : MonoBehaviour
                 if (Com_Back == 1)
                 {
                     Back = 0;
+                    //初期化
                     timer = 0;
                     taikitimer = 0;
                     one = false;
@@ -51,6 +55,7 @@ public class MoveFloor : MonoBehaviour
                 else if (Com_Back == 0)
                 {
                     Back = 1;
+                    //初期化
                     timer = 0;
                     taikitimer = 0;
                     one = false;
