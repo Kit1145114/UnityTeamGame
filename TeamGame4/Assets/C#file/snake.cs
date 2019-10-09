@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class snake : MonoBehaviour
 {
-    public float MoveDown = 100.0f;
+    public float MoveDown = 75.0f;
     //public float gravity = -0.2f;
     public float distance = 0.5f;
     private Vector3 snake_pos;
