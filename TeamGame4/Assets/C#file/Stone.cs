@@ -16,10 +16,13 @@ public class Stone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //岩の座標を持ってくる
         StonePos = GetComponent<Transform>().position;
+        //Yが-50以下になったら
         if (StonePos.y <= -50.0f)
         {
-            StonePos = new Vector3(0.04f, 5.48f, 32.95f);
+            //初期位置に戻す
+            StonePos = new Vector3(0.04f, 5.48f, 37.86f);
             transform.position = StonePos;
         }
     }

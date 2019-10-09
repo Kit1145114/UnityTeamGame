@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     private float x;
     private float z;
 
+
+
     CharacterController CCon;
 
     // Start is called before the first frame update
@@ -17,6 +19,7 @@ public class Player : MonoBehaviour
     {
         Player_pos = GetComponent<Transform>().position;
         CCon = gameObject.GetComponent<CharacterController>();
+
     }
 
     // Update is called once per frame
@@ -34,3 +37,5 @@ public class Player : MonoBehaviour
         CCon.Move(moveSpeed);
     }
 }
+
+
