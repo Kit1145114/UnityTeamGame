@@ -15,14 +15,17 @@ public class KeyPut : MonoBehaviour
     void Update()
     {
         GameObject player = GameObject.Find("Player");
-        MeshCollider mesh = gameObject.GetComponent<MeshCollider>();
         Vector3 p_pos = player.transform.position;
-        Vector3 k_pos = transform.position;
+        Vector3 k_pos = gameObject.transform.position;
         float dis = Vector3.Distance(p_pos, k_pos);
-        if(dis <= 1.5f)
+        if (dis <= 0.5f)
         {
             Game.GameCrear = true;
-            Debug.Log("草");
         }
     }
+
+    //private static Vector3 NewMethod(GameObject player)
+    //{
+    //    return player.transform.localPosition;
+    //}
 }

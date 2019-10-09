@@ -5,8 +5,8 @@ using UnityEngine;
 public class snake : MonoBehaviour
 {
     public float MoveDown = 100.0f;
-    public float gravity = -0.2f;
-    public float distance = 3.5f;
+    //public float gravity = -0.2f;
+    public float distance = 0.5f;
     private Vector3 snake_pos;
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,7 @@ public class snake : MonoBehaviour
         if(dis <= distance)
         {
             gameObject.transform.position += move;
-            if (dis <= 2.0f && Player.PlayerDeath == false )
+            if (dis <= 0.4f && Player.PlayerDeath == false )
             {
                 Player.PlayerDeath = true;
             }

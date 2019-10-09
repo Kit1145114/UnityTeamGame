@@ -21,7 +21,7 @@ public class Title : MonoBehaviour
         //}
         if(Input.GetKeyDown("joystick button 0"))
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("Game");
         }
     }
 }
