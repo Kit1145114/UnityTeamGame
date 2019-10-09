@@ -5,33 +5,74 @@ using UnityEngine;
 public class Camera : MonoBehaviour
 {
     public GameObject player; //= GameObject.Find("Player");
+    public float rotateSpeed = 3.0f;
     private Vector3 offset;
-    //private Vector3 prevPlayerPos = new Vector3(0,0,-1);
-    //private Vector3 posVector;
-    //public float scale = 3.0f;
-    //public float cameraSpeed = 1.0f;
-    // Start is called before the first frame update
+    Vector3 targetPos;
+    float sight_x = 0;
+    float sight_y = 0;
     void Start()
     {
         offset = transform.position - player.transform.position;
+        targetPos = player.transform.position;
     }
     // Update is called once per frame
+    void Camera1()
+    {
+        float angleH = Input.GetAxis("Horizontal2") * 5.0f;
+        float angleV = Input.GetAxis("Vertical2") * 5.0f;
+        if (sight_x >= 360)
+        {
+            sight_x = sight_x - 360;
+        }
+        else if (sight_x < 0)
+        {
+            sight_x = 360 - sight_x;
+        }
+        sight_x = sight_x + angleH;
+
+        if (sight_y > 80)
+        {
+            if (angleV < 0)
+            {
+                sight_y = sight_y + angleV;
+            }
+        }
+        else if (sight_y < -90)
+        {
+            if (angleV > 0)
+            {
+                sight_y = sight_y + angleV;
+            }
+        }
+        else
+        {
+            sight_y = sight_y + angleV;
+        }
+        transform.position = player.transform.position + offset;
+        transform.localRotation = Quaternion.Euler(sight_y, sight_x, 0);
+    }
+
+    void Camera2()
+    {
+    float angle = Input.GetAxis("Horizontal2") * rotateSpeed;
+    transform.position = player.transform.position + offset;
+    transform.RotateAround(transform.position, Vector3.up, angle);
+    }
+
+    void Camera3()
+    {
+        float angle = Input.GetAxis("Horizontal2") * rotateSpeed;
+        transform.position = player.transform.position + targetPos;
+        transform.RotateAround(targetPos, Vector3.up, angle);
+    }
     void Update()
     {
-        //Vector3 currentPlayerPos = player.transform.position;
-        //Vector3 backVector = (prevPlayerPos - currentPlayerPos).normalized;
-        //posVector = (backVector == Vector3.zero) ? posVector : backVector;
-        //Vector3 targetPos = currentPlayerPos + scale * posVector;
-        //targetPos.y = targetPos.y + 0.5f;
-        //gameObject.transform.position = Vector3.Lerp(
-        //    gameObject.transform.position,
-        //    targetPos,
-        //    cameraSpeed * Time.deltaTime);
-        //gameObject.transform.LookAt(player.transform.position);
-        //prevPlayerPos = player.transform.position;
+        Camera1();
+        //Camera2();
+        //Camera3();
     }
     private void LateUpdate()
     {
-        transform.position = player.transform.position + offset;
+        //transform.position = player.transform.position + offset;
     }
 }
