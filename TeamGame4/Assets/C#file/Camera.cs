@@ -49,7 +49,7 @@ public class Camera : MonoBehaviour
         //    sight_y = sight_y + angleV;
         //}
         transform.position = player.transform.position + offset;
-        transform.localRotation = Quaternion.Euler(sight_y, sight_x, 0);
+        //transform.localRotation = Quaternion.Euler(sight_y, sight_x, 0);
     }
 
     void Camera2()
