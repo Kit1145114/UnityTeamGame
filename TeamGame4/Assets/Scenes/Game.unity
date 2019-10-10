@@ -2162,6 +2162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveDown: 70
+  Mode: 0.3
 --- !u!114 &665531389
 MonoBehaviour:
   m_ObjectHideFlags: 0
