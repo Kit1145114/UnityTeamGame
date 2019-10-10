@@ -18,6 +18,9 @@ public class Player : MonoBehaviour
     {
         Player_pos = GetComponent<Transform>().position;
         //CCon = gameObject.GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+
         PlayerDeath = false;
     }
 
