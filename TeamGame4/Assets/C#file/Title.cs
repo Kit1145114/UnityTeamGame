@@ -19,7 +19,7 @@ public class Title : MonoBehaviour
         //    //SceneManager.LoadScene("SampleScene");
         //    Debug.Log("button0");
         //}
-        if(Input.GetKeyDown("joystick button 0"))
+        if (Input.GetKeyDown("joystick button 0"))
         {
             SceneManager.LoadScene("Game");
         }
