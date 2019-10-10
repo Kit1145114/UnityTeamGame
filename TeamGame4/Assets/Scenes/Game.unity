@@ -950,7 +950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveDown: 75
-  distance: 1.5
+  distance: 0.5
 --- !u!65 &497555800
 BoxCollider:
   m_ObjectHideFlags: 0
