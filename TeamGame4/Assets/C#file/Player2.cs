@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player2 : MonoBehaviour
 {
     public float MoveDown = 20.0f;
     // public float gravity = -0.2f;
@@ -11,16 +11,13 @@ public class Player : MonoBehaviour
     private float z;
     public static bool PlayerDeath;
 
-    //CharacterController CCon;
     Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         Player_pos = GetComponent<Transform>().position;
-        //CCon = gameObject.GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotation;
-
         PlayerDeath = false;
     }
 
@@ -28,8 +25,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         //プレイヤー移動処理
-        x = Input.GetAxis("Horizontal");
-        z = Input.GetAxis("Vertical");
+        x = Input.GetAxis("Horizontal3");
+        z = Input.GetAxis("Vertical3");
 
         Vector3 moveSpeed = Vector3.zero;
         moveSpeed.x = x / MoveDown;
@@ -41,14 +38,9 @@ public class Player : MonoBehaviour
         {
             Retry.GameRetry = true;
         }
-        if(PlayerDeath == true)
+        if (PlayerDeath == true)
         {
             Retry.GameRetry = true;
         }
     }
-    private void LateUpdate()
-    { 
-    }
 }
-
-
