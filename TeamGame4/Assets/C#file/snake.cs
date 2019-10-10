@@ -25,8 +25,8 @@ public class snake : MonoBehaviour
         Vector3 m_pos = bc.transform.position;
         Vector3 move = Vector3.zero;
         Quaternion qRot = gameObject.transform.rotation;
-        float p1 = player.transform.position.x + player.transform.position.z;
-        float p2 = player2.transform.position.x + player2.transform.position.z;
+        float p1 = ((player.transform.position.x)*2) + ((player.transform.position.z)*2);
+        float p2 = ((player2.transform.position.x)*2) + ((player2.transform.position.z)*2);
         if (p1 >= p2)
         {
             move.x += (p_pos.x - m_pos.x) / MoveDown;
@@ -46,7 +46,7 @@ public class snake : MonoBehaviour
                 transform.rotation = Quaternion.LookRotation(diff);
             }
         }
-        if (p1 <= p2)
+        else if (p1 <= p2)
         {
             move.x += (p2_pos.x - m_pos.x) / MoveDown;
             move.z += (p2_pos.z - m_pos.z) / MoveDown;
