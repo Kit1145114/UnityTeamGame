@@ -6,7 +6,7 @@ public class snake : MonoBehaviour
 {
     public float MoveDown = 75.0f;
     //public float gravity = -0.2f;
-    public float distance = 0.5f;
+    public float distance = 100f;
     private Vector3 snake_pos;
     // Start is called before the first frame update
     void Start()
@@ -19,8 +19,9 @@ public class snake : MonoBehaviour
     {
         GameObject player = GameObject.Find("Player");
         Vector3 p_pos = player.transform.position;
-        MeshCollider mesh = gameObject.GetComponent<MeshCollider>();
-        Vector3 m_pos = mesh.transform.position;
+        //MeshCollider mesh = gameObject.GetComponent<MeshCollider>();
+        BoxCollider bc = gameObject.GetComponent<BoxCollider>();
+        Vector3 m_pos = bc.transform.position;
         Vector3 move = Vector3.zero;
         Quaternion qRot = gameObject.transform.rotation;
         move.x += (p_pos.x - m_pos.x) / MoveDown;
@@ -31,7 +32,8 @@ public class snake : MonoBehaviour
         if(dis <= distance)
         {
             gameObject.transform.position += move;
-            if (dis <= 0.4f && Player.PlayerDeath == false )
+            Debug.Log("草");
+            if (dis <= 1.5f && Player.PlayerDeath == false )
             {
                 Player.PlayerDeath = true;
             }

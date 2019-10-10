@@ -18,36 +18,36 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void Camera1()
     {
-        float angleH = Input.GetAxis("Horizontal2") * 5.0f;
-        float angleV = Input.GetAxis("Vertical2") * 5.0f;
-        if (sight_x >= 360)
-        {
-            sight_x = sight_x - 360;
-        }
-        else if (sight_x < 0)
-        {
-            sight_x = 360 - sight_x;
-        }
-        sight_x = sight_x + angleH;
+        //float angleH = Input.GetAxis("Horizontal2") * 5.0f;
+        //float angleV = Input.GetAxis("Vertical2") * 5.0f;
+        //if (sight_x >= 360)
+        //{
+        //    sight_x = sight_x - 360;
+        //}
+        //else if (sight_x < 0)
+        //{
+        //    sight_x = 360 - sight_x;
+        //}
+        //sight_x = sight_x + angleH;
 
-        if (sight_y > 80)
-        {
-            if (angleV < 0)
-            {
-                sight_y = sight_y + angleV;
-            }
-        }
-        else if (sight_y < -90)
-        {
-            if (angleV > 0)
-            {
-                sight_y = sight_y + angleV;
-            }
-        }
-        else
-        {
-            sight_y = sight_y + angleV;
-        }
+        //if (sight_y > 80)
+        //{
+        //    if (angleV < 0)
+        //    {
+        //        sight_y = sight_y + angleV;
+        //    }
+        //}
+        //else if (sight_y < -90)
+        //{
+        //    if (angleV > 0)
+        //    {
+        //        sight_y = sight_y + angleV;
+        //    }
+        //}
+        //else
+        //{
+        //    sight_y = sight_y + angleV;
+        //}
         transform.position = player.transform.position + offset;
         transform.localRotation = Quaternion.Euler(sight_y, sight_x, 0);
     }
