@@ -18,33 +18,52 @@ public class snake : MonoBehaviour
     void Update()
     {
         GameObject player = GameObject.Find("Player");
+        GameObject player2 = GameObject.Find("Player2");
         Vector3 p_pos = player.transform.position;
-        //MeshCollider mesh = gameObject.GetComponent<MeshCollider>();
+        Vector3 p2_pos = player2.transform.position;
         BoxCollider bc = gameObject.GetComponent<BoxCollider>();
         Vector3 m_pos = bc.transform.position;
         Vector3 move = Vector3.zero;
         Quaternion qRot = gameObject.transform.rotation;
-        move.x += (p_pos.x - m_pos.x) / MoveDown;
-        move.z += (p_pos.z - m_pos.z) / MoveDown;
-
-        Vector3 diff = transform.position - snake_pos;
-        float dis = Vector3.Distance(p_pos,m_pos);
-        if(dis <= distance)
+        float p1 = ((player.transform.position.x)*2) + ((player.transform.position.z)*2);
+        float p2 = ((player2.transform.position.x)*2) + ((player2.transform.position.z)*2);
+        if (p1 >= p2)
         {
-            gameObject.transform.position += move;
-            Debug.Log("草");
-            if (dis <= 1.5f && Player.PlayerDeath == false )
+            move.x += (p_pos.x - m_pos.x) / MoveDown;
+            move.z += (p_pos.z - m_pos.z) / MoveDown;
+            Vector3 diff = transform.position - snake_pos;
+            float dis = Vector3.Distance(p_pos, m_pos);
+            if (dis <= distance)
             {
-                Player.PlayerDeath = true;
+                gameObject.transform.position += move;
+                if (dis <= 1.5f && Player.PlayerDeath == false)
+                {
+                    Player.PlayerDeath = true;
+                }
+            }
+            if (diff.magnitude > 0.01f)
+            {
+                transform.rotation = Quaternion.LookRotation(diff);
             }
         }
-        else
+        else if (p1 <= p2)
         {
-            //float Timer = Time.deltaTime;
-        }
-        if(diff.magnitude > 0.01f)
-        {
-            transform.rotation = Quaternion.LookRotation(diff);
+            move.x += (p2_pos.x - m_pos.x) / MoveDown;
+            move.z += (p2_pos.z - m_pos.z) / MoveDown;
+            Vector3 diff2 = transform.position - snake_pos;
+            float dis2 = Vector3.Distance(p2_pos, m_pos);
+            if (dis2 <= distance)
+            {     
+                    gameObject.transform.position += move;
+                if (dis2 <= 1.5f && Player2.PlayerDeath == false)
+                {
+                    Player2.PlayerDeath = true;
+                }
+            }
+            if (diff2.magnitude > 0.01f)
+            {
+                transform.rotation = Quaternion.LookRotation(diff2);
+            }
         }
     }
 }

@@ -23,7 +23,11 @@ public class Key : MonoBehaviour
 
         Vector3 moveSpeed = Vector3.zero;
         moveSpeed.x = x / MoveDown;
-        moveSpeed.z = z / MoveDown;
+        moveSpeed.z = -(z / MoveDown);
         transform.position += moveSpeed;
+        if(transform.position.y < -10.0f)
+        {
+            Retry.GameRetry = true;
+        }
     }
 }
