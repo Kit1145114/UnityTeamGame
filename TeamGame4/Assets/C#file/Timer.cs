@@ -15,6 +15,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Player.PlayerDeath == false && Player2.PlayerDeath == false)
             time += Time.deltaTime;
             int t = Mathf.FloorToInt(time);
             Text uiText = GetComponent<Text>();
