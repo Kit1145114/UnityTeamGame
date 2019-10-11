@@ -4332,6 +4332,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map
       objectReference: {fileID: 0}
+    - target: {fileID: -6856250783987067782, guid: 8429a527cf7495144a20d6db3ed2e502,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: -6856250783987067782, guid: 8429a527cf7495144a20d6db3ed2e502,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -19.9
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8429a527cf7495144a20d6db3ed2e502,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4386,16 +4396,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -6856250783987067782, guid: 8429a527cf7495144a20d6db3ed2e502,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -11
-      objectReference: {fileID: 0}
-    - target: {fileID: -6856250783987067782, guid: 8429a527cf7495144a20d6db3ed2e502,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -19.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8429a527cf7495144a20d6db3ed2e502, type: 3}
@@ -4654,6 +4654,8 @@ GameObject:
   - component: {fileID: 1814969814}
   - component: {fileID: 1814969817}
   - component: {fileID: 1814969816}
+  - component: {fileID: 1814969818}
+  - component: {fileID: 1814969815}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -4680,6 +4682,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1814969815
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814969813}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97b5e0105d5b41440bd077605234c6e1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1814969816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4700,18 +4721,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 300
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 300
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "GAME OVER\n\n\u9811\u5F35\u308C\u68A7\u7A7A\uFF5E\uFF01"
+  m_Text: "     GAME OVER\n\nA\u30DC\u30BF\u30F3\u3067\u30EA\u30C8\u30E9\u30A4\uFF01"
 --- !u!222 &1814969817
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4720,6 +4741,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814969813}
   m_CullTransparentMesh: 0
+--- !u!111 &1814969818
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814969813}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a617017a4b1744246ac459e1f00a73db, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1865157673 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 1e57d4352f754564e8c47e701dd0790a,
