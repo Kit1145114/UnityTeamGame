@@ -15,9 +15,14 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        int t = Mathf.FloorToInt(time);
-        Text uiText = GetComponent<Text>();
-        uiText.text = "Time:" + t;
+            time += Time.deltaTime;
+            int t = Mathf.FloorToInt(time);
+            Text uiText = GetComponent<Text>();
+            uiText.text = "Time:" + t;
+        if(Game.GameCrear)
+        {
+            ResultTime.result = t;
+            //ResultTime.highScore = t;
+        }
     }
 }
