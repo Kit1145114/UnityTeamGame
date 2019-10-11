@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Title : MonoBehaviour
 {
+    public AudioClip se;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         //GameObject.Find("Title");
     }
 
@@ -22,6 +25,7 @@ public class Title : MonoBehaviour
         if (Input.GetKeyDown("joystick button 0"))
         {
             SceneManager.LoadScene("Game");
+            audioSource.PlayOneShot(se);
         }
     }
 }
