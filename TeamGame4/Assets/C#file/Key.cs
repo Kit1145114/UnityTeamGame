@@ -6,14 +6,19 @@ public class Key : MonoBehaviour
 {
     public float MoveDown = 20.0f;
     private Vector3 KeyPos; //プレイヤー
+    private bool Down = false;
     private float x;
     private float z;
     private float x2;
     private float z2;
     public float Mode = 0.3f;
+    CapsuleCollider cc;
+    //MeshRenderer mr;
     // Start is called before the first frame update
     void Start()
     {
+        cc = GetComponent<CapsuleCollider>();
+       // mr = GetComponent<MeshRenderer>();
         KeyPos = GetComponent<Transform>().position;
     }
 
@@ -32,16 +37,27 @@ public class Key : MonoBehaviour
         Vector3 m_position = Vector3.zero;
         m_position.x = posx;
         m_position.z = posz;
-        m_position.y += transform.position.y;
-        transform.position = m_position;
-
-        if (transform.position.y < -10.0f)
+        if (X > Mode || X < -Mode || Z > Mode || Z < -Mode)
+        {
+            Down = true;
+            //cc.isTrigger = true;
+            //m_position.y -= 1.0f;
+            //mr.enabled = false;
+        }
+        else
+        {
+            m_position.y += this.transform.position.y;
+            transform.position = m_position;
+        }
+        Debug.Log(X);
+        Debug.Log(Z);
+        if (transform.position.y < -5.0f)
         {
             Retry.GameRetry = true;
         }
-        if (X > Mode || X < -Mode ||Z > Mode || Z < -Mode)
+        if(Down)
         {
-            Player.PlayerDeath = true;
+            cc.isTrigger = true;
         }
     }
 }
