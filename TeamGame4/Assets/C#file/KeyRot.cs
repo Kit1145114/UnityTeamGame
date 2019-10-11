@@ -15,7 +15,7 @@ public class KeyRot : MonoBehaviour
         {
             Quaternion lockRotation = Quaternion.LookRotation(lookTarget.transform.position - transform.position, Vector3.up);
 
-            lockRotation.z = 0;
+            lockRotation.x = 0;
             lockRotation.z = 0;
 
             transform.rotation = Quaternion.Lerp(transform.rotation, lockRotation, RotSpeed);
