@@ -9,12 +9,10 @@ public class FloorHit : MonoBehaviour
         if (col.gameObject.tag == "MoveFloor")
         {
             transform.parent = col.gameObject.transform;
-            Debug.Log("parenting");
         }
     }
     void OnCollisionExit()
     {
         transform.parent = null;
-        Debug.Log("exit");
     }
 }

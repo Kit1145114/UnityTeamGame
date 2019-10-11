@@ -34,8 +34,7 @@ public class Key : MonoBehaviour
         m_position.z = posz;
         m_position.y += transform.position.y;
         transform.position = m_position;
-        Debug.Log(X);
-        Debug.Log(Z);
+
         if (transform.position.y < -10.0f)
         {
             Retry.GameRetry = true;
